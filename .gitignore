@@ -1,3 +1,7 @@
 # Ignore node_modules
 client/node_modules/
 server/node_modules/
+
+# Ignore .idea
+client/.idea/
+server/.idea/

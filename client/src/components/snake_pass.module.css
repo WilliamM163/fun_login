@@ -1,0 +1,44 @@
+.body {
+    height: 400px;
+    width: 400px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    position: relative;
+}
+
+.snake {
+    background-color: springgreen;
+}
+
+.apple {
+    background-color: red;
+}
+
+.play_button {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: lightgrey;
+    border-top: none;
+    border-left: none;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+    color: black;
+}
+
+.play_button:hover {
+    background-color: lightsteelblue;
+}
+
+.play_button:active {
+    background-color: midnightblue;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+    border-bottom: none;
+    border-right: none;
+    color: white;
+}

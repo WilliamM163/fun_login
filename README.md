@@ -6,6 +6,9 @@ Instead of relying on traditional passwords, users authenticate by solving a uni
 The specific sequence of moves a user takes to complete the game becomes their "password."
 This adds a layer of fun and interactivity to the login process, making it more memorable and potentially more secure.
 
+## Current Tasks
+[tasks.md](./tasks.md)
+
 ## Tech Stack
 * **Frontend:**
     * React
