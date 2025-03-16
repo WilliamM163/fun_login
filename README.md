@@ -102,12 +102,6 @@ This adds a layer of fun and interactivity to the login process, making it more 
         npm run dev
         ```
 
-4.  **Database Setup (PostgreSQL):**
-
-    * Ensure you have PostgreSQL installed and running.
-    * Create a database with the name specified in your `.env` file.
-    * Ensure your postgres user has the correct permissions.
-
 ## Usage
 1.  **Registration:**
     * Open the application in your browser.
@@ -120,4 +114,4 @@ This adds a layer of fun and interactivity to the login process, making it more 
     * Solve the snake puzzle that is presented to you.
     * Solve it in the exact same way you did when you registered.
 3.  **Profile:**
-    * After logging in you chat to everyone registered on the site.
+    * After you'll be greated by a Welcome Message
