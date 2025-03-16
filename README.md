@@ -29,7 +29,7 @@ This adds a layer of fun and interactivity to the login process, making it more 
 1.  **Clone the Repository:**
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/WilliamM163/fun_login
     cd fun_login
     ```
 
@@ -47,16 +47,24 @@ This adds a layer of fun and interactivity to the login process, making it more 
         npm install
         ```
 
-    * Create a `.env` file in the `backend` directory and add the following environment variables:
-
-        ```
-        DATABASE_URL=postgres://<user>:<password>@<host>:<port>/<database>
-        JWT_SECRET=<your_jwt_secret>
-        PORT=5000 #or whatever port you want the backend to run on.
-        ```
-
-        * replace the database values with your postgres values.
+    * Create a `.env` file and copy variables below
+      ```.env
+      DB_USER=<your_postgres_user_name>
+      DB_HOST=localhost
+      DB_DATABASE=fun_login
+      DB_PASSWORD=<your_postgres_user_password>
+      DB_PORT=<5432 or your_postgres_port>
+      JWT_SECRET=<secret>
+      JWT_EXPIRY=1h
+      SERVER_PORT=3000
+      ```
+        * replace variables like postgres_username to variables unique to your machine
         * generate a secure string for the JWT_SECRET.
+        * to generate a secret you can use the following JS code
+      ```bash
+      node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
+      ```
+
     * Initializing the database tables
         ```bash
         psql -U [your_postgresql_username] -d [your_postgresql_database_name] -f setup.sql
@@ -85,7 +93,7 @@ This adds a layer of fun and interactivity to the login process, making it more 
     * Create a `.env` file in the `client` directory and add the following environment variable:
 
         ```
-        API_URL=http://localhost:5000
+        VITE_API_URL=http://localhost:3000
         ```
 
     * Start the frontend development server:

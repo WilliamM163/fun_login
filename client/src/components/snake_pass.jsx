@@ -3,14 +3,14 @@ import { useState } from 'react';
 import styles from './snake_pass.module.css';
 import {formatGridPosition, attachKeyPressListener, attachClickListener} from './snake_functions.js';
 
-function SnakePass({emailCheck}) {
+function SnakePass({inputChecks}) {
     const [snakePosition, setSnakePosition] = useState({x: 2, y: 7});
     const [button, setButton] = useState({display: true, text: 'Enter Pass'});
     const applePosition = {x: 12, y: 7};
 
     const handleClick = () => {
 
-        if (emailCheck() === true) { // Email is invalid
+        if (inputChecks() === true) { // Email is invalid
             return;
         }
 

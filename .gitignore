@@ -5,3 +5,7 @@ server/node_modules/
 # Ignore .idea
 client/.idea/
 server/.idea/
+
+# Ignore .env files
+client/.env
+server/.env
