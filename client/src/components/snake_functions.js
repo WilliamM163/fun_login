@@ -6,7 +6,9 @@ const formatGridPosition = ({x, y}) => {
 let positionOfApple;        //Object containing x and y co-ordinates
 let currentSnakePosition;   //Object containing x and y co-ordinates
 let moveSnake;              //Function takes in new x and y and reloads app state
+let authenticate;            //Function which is used to authenticate when snake reaches the apple
 var pass = '';       //String which contains the unique combination
+
 const keyDownHandler = (event) => {
     const key = event.key.toLowerCase();
     if (key === 'escape') {
@@ -34,9 +36,8 @@ const keyDownHandler = (event) => {
     }
     // Comparing currentSnakePosition to positionOfApple
     if (JSON.stringify(currentSnakePosition) === JSON.stringify(positionOfApple)) {
-        // Navigate to loading screen
-        // Call our API for Auth or Registration
-        console.log(pass);
+        authenticate(pass);
+        reset();
     }
 }
 
@@ -45,10 +46,11 @@ const removeKeyPressListener = () => {
     console.log('Removed Key Down Event Listener');
 }
 
-const attachKeyPressListener = (snakeCoordinates, appleCoordinates, onKeyPress) => {
+const attachKeyPressListener = (snakeCoordinates, appleCoordinates, onKeyPress, authenticateFunc) => {
     currentSnakePosition = snakeCoordinates;
     positionOfApple = appleCoordinates;
     moveSnake = onKeyPress;
+    authenticate = authenticateFunc;
     document.addEventListener('keydown', keyDownHandler);
     console.log('Added Key Down Event Listener')
 }
@@ -59,9 +61,9 @@ const reset = () => {
     removeKeyPressListener();
     removeClickListener();
     currentSnakePosition = null;
+    pass = '';
     moveSnake(2, 7);    // Moved back to default position
     revealButton();
-
 }
 
 const removeClickListener = () => {

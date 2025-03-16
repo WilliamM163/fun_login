@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './snake_pass.module.css';
 import {formatGridPosition, attachKeyPressListener, attachClickListener} from './snake_functions.js';
 
-function SnakePass({inputChecks}) {
+function SnakePass({inputChecks, authenticate}) {
     const [snakePosition, setSnakePosition] = useState({x: 2, y: 7});
     const [button, setButton] = useState({display: true, text: 'Enter Pass'});
     const applePosition = {x: 12, y: 7};
@@ -16,7 +16,7 @@ function SnakePass({inputChecks}) {
 
         attachKeyPressListener(snakePosition, applePosition,(x, y) => {
             setSnakePosition({x, y});
-        });
+        }, authenticate);
         attachClickListener(() => {
             setButton({display: true, text: 'Try Again'});
         });
